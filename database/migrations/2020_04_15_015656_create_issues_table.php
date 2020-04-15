@@ -38,7 +38,7 @@ class CreateIssuesTable extends Migration
 
             $table->foreign('asignee_id')
                 ->references('id')
-                ->on('users')
+                ->on('project_members')
                 ->onDelete('restrict');
 
         });
