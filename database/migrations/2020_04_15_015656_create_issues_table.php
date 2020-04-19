@@ -17,7 +17,7 @@ class CreateIssuesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('project_id');
             $table->unsignedInteger('creator_id');
-            $table->unsignedInteger('asignee_id');
+            $table->unsignedInteger('asignee_id')->nullable()->default(null);
             $table->integer('serial_no');
             $table->unsignedInteger('type');
             $table->string('title');
