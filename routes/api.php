@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::post('/projects', 'ProjectController@create');
     Route::get('/projects', 'ProjectController@index');
     Route::get('/projects/{project}', 'ProjectController@show');
+    Route::get('/projects/{project}/issues', 'ProjectController@issues');
 
     Route::get('/issue_types', 'IssueTypeController@index');
 

@@ -85,6 +85,13 @@ class ProjectController extends Controller
         return $project;
     }
 
+    public function issues(Project $project){
+
+        $issues = $project->issues;
+
+        return $issues->load('type');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

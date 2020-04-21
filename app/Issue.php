@@ -13,4 +13,8 @@ class Issue extends Model
 
         return $this->belongsTo('App\Project', 'project_id', 'id');
     }
+
+    public function type(){
+        return $this->belongsTo('App\IssueType', 'type', 'id');
+    }
 }
