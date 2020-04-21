@@ -51,8 +51,12 @@ class IssueController extends Controller
         $issue->creator_id = Auth::id();
         $issue->serial_no = $sl;
         $issue->save();
-
-        $res = array(); $res['status'] = 'succcess';
+        $issue->project_abbr = $issue->project->abbr;
+        $issue->key = $issue->project_abbr."-".$issue->serial_no;
+        $res = [
+            "message" => "New Issue created",
+            "issue" => $issue
+        ];
 
         return $res;
 
