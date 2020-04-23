@@ -17,6 +17,8 @@ class IssueController extends Controller
     public function index()
     {
         //
+
+        return Issue::with(['type', 'project'])->get();
     }
 
     /**
@@ -68,9 +70,10 @@ class IssueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Issue $issue)
     {
         //
+        return $issue;
     }
 
     /**
